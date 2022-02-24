@@ -1,4 +1,4 @@
-version="3.3.1"
+version="3.3.2"
 tags={
 	"Leaders"
 	"Graphics"
@@ -10,4 +10,4 @@ tags={
 }
 name="Kemono Friends new species mod"
 thumbnail="thumbnail.jpg"
-supported_version="3.3.1"
+supported_version="3.3.2"
