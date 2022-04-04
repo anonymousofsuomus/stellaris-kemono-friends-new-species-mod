@@ -62,6 +62,7 @@ portraits = {
     friend_southern_rockhopper_penguin = { texturefile = "gfx/models/portraits/kemono/southern_rockhopper_penguin.dds" }
     friend_southern_tamandua = { texturefile = "gfx/models/portraits/kemono/southern_tamandua.dds" }
     friend_suri_alpaca = { texturefile = "gfx/models/portraits/kemono/suri_alpaca.dds" }
+    friend_tasmanian_devil = { texturefile = "gfx/models/portraits/kemono/tasmanian_devil.dds" }
     friend_thomsons_gazelle = { texturefile = "gfx/models/portraits/kemono/thomsons_gazelle.dds" }
     friend_tsuchinoko = { texturefile = "gfx/models/portraits/kemono/tsuchinoko.dds" }
 }
@@ -135,6 +136,7 @@ portrait_groups = {
                     friend_southern_rockhopper_penguin
                     friend_southern_tamandua
                     friend_suri_alpaca
+                    friend_tasmanian_devil
                     friend_thomsons_gazelle
                     friend_tsuchinoko
                 }
@@ -208,13 +210,15 @@ portrait_groups = {
                     friend_southern_rockhopper_penguin
                     friend_southern_tamandua
                     friend_suri_alpaca
+                    friend_tasmanian_devil
                     friend_thomsons_gazelle
                     friend_tsuchinoko
                 }
             }
         }
 
-        pop = {
+        #pop scope
+        pop = { #for a specific pop
             add = {
                 portraits = {
                     friend_aardwolf
@@ -280,48 +284,74 @@ portrait_groups = {
                     friend_southern_rockhopper_penguin
                     friend_southern_tamandua
                     friend_suri_alpaca
+                    friend_tasmanian_devil
                     friend_thomsons_gazelle
                     friend_tsuchinoko
                 }
             }
         }
 
-        leader = { 
+        #leader scope
+        leader = { #scientists, generals, admirals, governor
+            #scientists
             add = {
+                trigger = {
+                    has_trait = "leader_trait_spark_of_genius"
+                }
                 portraits = {
-                    friend_aardwolf
-                    friend_african_wild_dog
+                    friend_nothern_white_faced_owl
+                }
+            }
+
+            add = {
+                trigger = {
+                    has_trait = "leader_trait_maniacal"
+                }
+                portraits = {
+                    friend_eurasian_eagle_owl
+                }
+            }
+
+            add = {
+                trigger = {
+                    leader_class = scientist
+                    NOT = { has_trait = "leader_trait_spark_of_genius" }
+                    NOT = { has_trait = "leader_trait_maniacal" }
+                }
+                portraits = {
+                #   friend_aardwolf
+                #   friend_african_wild_dog
                     friend_american_beaver
-                    friend_arabian_oryx
-                    friend_asian_small_clawed_otter
+                #   friend_arabian_oryx
+                #   friend_asian_small_clawed_otter
                     friend_australian_devil
-                    friend_axis_deer
+                #   friend_axis_deer
                     friend_axolotl
                     friend_bearded_seal
-                    friend_black_jaguar
+                #   friend_black_jaguar
                     friend_black_leopard
                     friend_black_tailed_gull
-                    friend_black_tailed_prairie_dog
-                    friend_brown_bear
+                #   friend_black_tailed_prairie_dog
+                #   friend_brown_bear
                     friend_capybara
                     friend_cougar
                     friend_crested_ibis
-                    friend_crested_porcupine
-                    friend_emperor_penguin
-                    friend_eurasian_eagle_owl
+                #   friend_crested_porcupine
+                #   friend_emperor_penguin
+                #   friend_eurasian_eagle_owl
                     friend_ezo_red_fox
                     friend_fennec
                     friend_fossa
-                    friend_gentoo_penguin
-                    friend_golden_snub_nosed_monkey
+                #   friend_gentoo_penguin
+                #   friend_golden_snub_nosed_monkey
                     friend_golden_tiger
                     friend_gray_wolf
                     friend_hippopotamus
-                    friend_humboldt_penguin
+                #   friend_humboldt_penguin
                     friend_indian_elephant
                     friend_indian_peafowl
-                    friend_jaguar
-                    friend_japanese_black_bear
+                #   friend_jaguar
+                #   friend_japanese_black_bear
                     friend_jinmengyo
                     friend_king_cobra
                     friend_leopard
@@ -330,12 +360,237 @@ portrait_groups = {
                     friend_margay
                     friend_masked_booby
                     friend_moose
-                    friend_nothern_white_faced_owl
+                #   friend_nothern_white_faced_owl
+                #   friend_ocelot
+                #   friend_okapi
+                    friend_panther_chameleon
+                #   friend_plains_zebra
+                #   friend_polar_bear
+                #   friend_raccoon
+                #   friend_red_kangaroo
+                    friend_red_panda
+                    friend_reticulated_giraffe
+                    friend_rock_hyrax
+                #   friend_royal_penguin
+                    friend_sand_cat
+                    friend_scarlet_ibis
+                #   friend_serval
+                    friend_shoebill
+                    friend_short_beaked_common_dolphin
+                #   friend_sika_deer
+                    friend_silver_fox
+                #   friend_southern_rockhopper_penguin
+                    friend_southern_tamandua
+                    friend_suri_alpaca
+                    friend_tasmanian_devil
+                #   friend_thomsons_gazelle
+                    friend_tsuchinoko
+                }
+            }
+
+            #generals
+            add = {
+                trigger = {
+                    leader_class = general
+                }
+                portraits = {
+                    friend_aardwolf
+                    friend_african_wild_dog
+                #   friend_american_beaver
+                    friend_arabian_oryx
+                #   friend_asian_small_clawed_otter
+                #   friend_australian_devil
+                    friend_axis_deer
+                #   friend_axolotl
+                #   friend_bearded_seal
+                    friend_black_jaguar
+                    friend_black_leopard
+                #   friend_black_tailed_gull
+                #   friend_black_tailed_prairie_dog
+                    friend_brown_bear
+                #   friend_capybara
+                    friend_cougar
+                #   friend_crested_ibis
+                    friend_crested_porcupine
+                #   friend_emperor_penguin
+                #   friend_eurasian_eagle_owl
+                #   friend_ezo_red_fox
+                #   friend_fennec
+                    friend_fossa
+                #   friend_gentoo_penguin
+                    friend_golden_snub_nosed_monkey
+                    friend_golden_tiger
+                    friend_gray_wolf
+                #   friend_hippopotamus
+                #   friend_humboldt_penguin
+                    friend_indian_elephant
+                #   friend_indian_peafowl
+                    friend_jaguar
+                    friend_japanese_black_bear
+                #   friend_jinmengyo
+                    friend_king_cobra
+                    friend_leopard
+                    friend_lion
+                #   friend_malayan_tapir
+                #   friend_margay
+                #   friend_masked_booby
+                    friend_moose
+                #   friend_nothern_white_faced_owl
                     friend_ocelot
                     friend_okapi
-                    friend_panther_chameleon
+                #   friend_panther_chameleon
                     friend_plains_zebra
                     friend_polar_bear
+                    friend_raccoon
+                #   friend_red_kangaroo
+                #   friend_red_panda
+                    friend_reticulated_giraffe
+                #   friend_rock_hyrax
+                #   friend_royal_penguin
+                #   friend_sand_cat
+                #   friend_scarlet_ibis
+                    friend_serval
+                #   friend_shoebill
+                #   friend_short_beaked_common_dolphin
+                    friend_sika_deer
+                #   friend_silver_fox
+                #   friend_southern_rockhopper_penguin
+                #   friend_southern_tamandua
+                #   friend_suri_alpaca
+                    friend_tasmanian_devil
+                    friend_thomsons_gazelle
+                    friend_tsuchinoko
+                }
+            }
+
+            #admirals
+            add = {
+                trigger = {
+                    leader_class = admiral
+                }
+                portraits = {
+                #   friend_aardwolf
+                #   friend_african_wild_dog
+                    friend_american_beaver
+                #   friend_arabian_oryx
+                #   friend_asian_small_clawed_otter
+                    friend_australian_devil
+                    friend_axis_deer
+                    friend_axolotl
+                    friend_bearded_seal
+                    friend_black_jaguar
+                    friend_black_leopard
+                    friend_black_tailed_gull
+                #   friend_black_tailed_prairie_dog
+                    friend_brown_bear
+                #   friend_capybara
+                    friend_cougar
+                    friend_crested_ibis
+                    friend_crested_porcupine
+                #   friend_emperor_penguin
+                    friend_eurasian_eagle_owl
+                    friend_ezo_red_fox
+                    friend_fennec
+                    friend_fossa
+                #   friend_gentoo_penguin
+                    friend_golden_snub_nosed_monkey
+                    friend_golden_tiger
+                    friend_gray_wolf
+                    friend_hippopotamus
+                #   friend_humboldt_penguin
+                #   friend_indian_elephant
+                #   friend_indian_peafowl
+                    friend_jaguar
+                    friend_japanese_black_bear
+                    friend_jinmengyo
+                #   friend_king_cobra
+                    friend_leopard
+                    friend_lion
+                    friend_malayan_tapir
+                #   friend_margay
+                    friend_masked_booby
+                    friend_moose
+                    friend_nothern_white_faced_owl
+                    friend_ocelot
+                #   friend_okapi
+                    friend_panther_chameleon
+                #   friend_plains_zebra
+                    friend_polar_bear
+                #   friend_raccoon
+                    friend_red_kangaroo
+                #   friend_red_panda
+                #   friend_reticulated_giraffe
+                #   friend_rock_hyrax
+                #   friend_royal_penguin
+                #   friend_sand_cat
+                    friend_scarlet_ibis
+                #   friend_serval
+                    friend_shoebill
+                    friend_short_beaked_common_dolphin
+                #   friend_sika_deer
+                    friend_silver_fox
+                #   friend_southern_rockhopper_penguin
+                    friend_southern_tamandua
+                #   friend_suri_alpaca
+                    friend_tasmanian_devil
+                #   friend_thomsons_gazelle
+                    friend_tsuchinoko
+                }
+            }
+
+            #governor
+            add = {
+                trigger = {
+                    leader_class = governor
+                }
+                portraits = {
+                    friend_aardwolf
+                    friend_african_wild_dog
+                #   friend_american_beaver
+                    friend_arabian_oryx
+                    friend_asian_small_clawed_otter
+                #   friend_australian_devil
+                    friend_axis_deer
+                    friend_axolotl
+                #   friend_bearded_seal
+                #   friend_black_jaguar
+                    friend_black_leopard
+                    friend_black_tailed_gull
+                    friend_black_tailed_prairie_dog
+                    friend_brown_bear
+                    friend_capybara
+                #   friend_cougar
+                    friend_crested_ibis
+                #   friend_crested_porcupine
+                    friend_emperor_penguin
+                #   friend_eurasian_eagle_owl
+                #   friend_ezo_red_fox
+                    friend_fennec
+                    friend_fossa
+                    friend_gentoo_penguin
+                #   friend_golden_snub_nosed_monkey
+                    friend_golden_tiger
+                #   friend_gray_wolf
+                    friend_hippopotamus
+                    friend_humboldt_penguin
+                #   friend_indian_elephant
+                    friend_indian_peafowl
+                    friend_jaguar
+                    friend_japanese_black_bear
+                #   friend_jinmengyo
+                    friend_king_cobra
+                #   friend_leopard
+                    friend_lion
+                    friend_malayan_tapir
+                    friend_margay
+                #   friend_masked_booby
+                    friend_moose
+                #   friend_nothern_white_faced_owl
+                    friend_ocelot
+                    friend_okapi
+                #   friend_panther_chameleon
+                    friend_plains_zebra
+                #   friend_polar_bear
                     friend_raccoon
                     friend_red_kangaroo
                     friend_red_panda
@@ -345,15 +600,91 @@ portrait_groups = {
                     friend_sand_cat
                     friend_scarlet_ibis
                     friend_serval
-                    friend_shoebill
+                #   friend_shoebill
                     friend_short_beaked_common_dolphin
                     friend_sika_deer
+                #   friend_silver_fox
+                    friend_southern_rockhopper_penguin
+                    friend_southern_tamandua
+                    friend_suri_alpaca
+                #   friend_tasmanian_devil
+                    friend_thomsons_gazelle
+                #   friend_tsuchinoko
+                }
+            }
+
+            #envoy
+            add = {
+                trigger = {
+                    leader_class = envoy
+                }
+                portraits = {
+                #   friend_aardwolf
+                #   friend_african_wild_dog
+                    friend_american_beaver
+                    friend_arabian_oryx
+                    friend_asian_small_clawed_otter
+                    friend_australian_devil
+                #   friend_axis_deer
+                    friend_axolotl
+                    friend_bearded_seal
+                #   friend_black_jaguar
+                #   friend_black_leopard
+                #   friend_black_tailed_gull
+                    friend_black_tailed_prairie_dog
+                #   friend_brown_bear
+                    friend_capybara
+                #   friend_cougar
+                    friend_crested_ibis
+                    friend_crested_porcupine
+                    friend_emperor_penguin
+                    friend_eurasian_eagle_owl
+                    friend_ezo_red_fox
+                    friend_fennec
+                #   friend_fossa
+                    friend_gentoo_penguin
+                    friend_golden_snub_nosed_monkey
+                    friend_golden_tiger
+                #   friend_gray_wolf
+                    friend_hippopotamus
+                    friend_humboldt_penguin
+                #   friend_indian_elephant
+                    friend_indian_peafowl
+                #   friend_jaguar
+                #   friend_japanese_black_bear
+                    friend_jinmengyo
+                #   friend_king_cobra
+                #   friend_leopard
+                #   friend_lion
+                    friend_malayan_tapir
+                    friend_margay
+                    friend_masked_booby
+                    friend_moose
+                    friend_nothern_white_faced_owl
+                #   friend_ocelot
+                    friend_okapi
+                    friend_panther_chameleon
+                    friend_plains_zebra
+                #   friend_polar_bear
+                    friend_raccoon
+                    friend_red_kangaroo
+                    friend_red_panda
+                    friend_reticulated_giraffe
+                    friend_rock_hyrax
+                    friend_royal_penguin
+                    friend_sand_cat
+                    friend_scarlet_ibis
+                    friend_serval
+                #   friend_shoebill
+                    friend_short_beaked_common_dolphin
+                #   friend_sika_deer
                     friend_silver_fox
                     friend_southern_rockhopper_penguin
                     friend_southern_tamandua
                     friend_suri_alpaca
-                    friend_thomsons_gazelle
-                    friend_tsuchinoko
+                #   friend_tasmanian_devil
+                #   friend_thomsons_gazelle
+                #   friend_tsuchinoko
                 }
             }
         }
@@ -424,6 +755,7 @@ portrait_groups = {
                     friend_southern_rockhopper_penguin
                     friend_southern_tamandua
                     friend_suri_alpaca
+                    friend_tasmanian_devil
                     friend_thomsons_gazelle
                     friend_tsuchinoko
                 }
