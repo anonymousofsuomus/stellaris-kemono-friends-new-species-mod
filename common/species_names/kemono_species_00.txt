@@ -1,7 +1,7 @@
 kemono_species = {
     kemono_species = {
         name = "Kemono Friend"
-        plural "Friends"
+        plural = "Friends"
         home_system = "Japari"
         home_planet = "Park"
     }
